@@ -1,3 +1,4 @@
+//Botón de favorito
 const bton = document.querySelectorAll('.boton');
 
 bton.forEach(function(bton){
@@ -14,7 +15,7 @@ bton.forEach(function(bton){
     });
 });
 
-
+//Catálogo dinamico
 const catalogoMuebles = [
     {
         id: 1,
