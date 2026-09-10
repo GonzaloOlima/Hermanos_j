@@ -1,4 +1,4 @@
-let totalCompra=0;
+/*let totalCompra=0;
 let comprando = true;
 let contProductos = 0;
 let conversionPrecio= 0;
@@ -24,4 +24,4 @@ while (comprando) {
     }
 }
 
-alert(`${contProductos} agregados al carrito, valor ${totalCompra}`)
+alert(`${contProductos} agregados al carrito, valor ${totalCompra}`)*/
