@@ -47,11 +47,6 @@
         </p>
       </section>
 
-      <section>
-        <h2>Guardar Producto</h2>
-        <button id="btn_guardar"  style="padding: 5px 10px;">Guardar</button>
-        <button id="btn_Cargar" style="padding: 5px 10px;">Cargar</button>
-      </section>
 
       <!-- Sección de Productos Destacados -->
       <section class="productos" id="productos">
@@ -64,7 +59,7 @@
               <!--Cree un div para poder separar el titulo del boton-->
               <div class="titulo-producto">
                 <h3>Sofá Premium</h3>
-                <button class="boton">❤️ Añadir a Favoritos</button>
+                <button class="boton boton-favorito">❤️ Añadir a Favoritos</button>
               </div>
               
               <p>
@@ -85,7 +80,7 @@
             <div class="producto-contenido">
               <div class="titulo-producto">
                 <h3>Comededor Clásico</h3>
-                <button class="boton">❤️ Añadir a Favoritos</button>
+                <button class="boton boton-favorito">❤️ Añadir a Favoritos</button>
               </div>
               
               <p>
@@ -106,7 +101,7 @@
             <div class="producto-contenido">
               <div class="titulo-producto">
                 <h3>Cama Continental</h3>
-                <button class="boton">❤️ Añadir a Favoritos</button>
+                <button class="boton boton-favorito">❤️ Añadir a Favoritos</button>
               </div>
               
               <p>
@@ -127,7 +122,7 @@
             <div class="producto-contenido">
               <div class="titulo-producto">
                 <h3>Librero Contemporáneo</h3>
-                <button class="boton">❤️ Añadir a Favoritos</button>
+                <button class="boton boton-favorito">❤️ Añadir a Favoritos</button>
               </div>
               
               <p>
@@ -148,7 +143,7 @@
             <div class="producto-contenido">
               <div class="titulo-producto">
                 <h3>Escritorio Home Office</h3>
-                <button class="boton">❤️ Añadir a Favoritos</button>
+                <button class="boton boton-favorito">❤️ Añadir a Favoritos</button>
               </div>
               
               <p>
@@ -169,7 +164,7 @@
             <div class="producto-contenido">
               <div class="titulo-producto">
                 <h3>Rack TV Modular</h3>
-                <button class="boton">❤️ Añadir a Favoritos</button>
+                <button class="boton boton-favorito">❤️ Añadir a Favoritos</button>
               </div>
               
               <p>
@@ -186,6 +181,13 @@
         </div>
       </section>
 
+
+      <!-- Catálogo Dinámico (Ejercicio 1) -->
+      <section class="catalogo-dinamico" id="catalogo-dinamico">
+        <h2>Catálogo de Muebles</h2>
+        <div id="product-container"></div>
+      </section>
+
       <!--SECCIÓN DE PREFERENCIAS -->
       <section class="preferencias-seccion" style="padding: 20px; text-align: center;">
         <h2>Preferencias de Usuario</h2>
@@ -194,12 +196,6 @@
         <button id="btn-cargar" class="boton">Cargar Preferencias</button>
       </section>
 
-
-      <!-- Catálogo Dinámico (Ejercicio 1) -->
-      <section class="catalogo-dinamico" id="catalogo-dinamico">
-        <h2>Catálogo de Muebles</h2>
-        <div id="product-container"></div>
-      </section>
 
     </main>
 
@@ -211,7 +207,6 @@
         sociales
       </p>
     </footer>
-
       <!--Enlanzo el index con app.js-->
     <script src="js/app.js"></script>
   </body>

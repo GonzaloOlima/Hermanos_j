@@ -1,21 +1,4 @@
-//Botón de favorito
-const bton = document.querySelectorAll('.boton');
-
-bton.forEach(function(bton){
-
-    bton.addEventListener('click', function() {
-
-        bton.classList.toggle('favorito');
-    
-        if(bton.classList.contains('favorito')){
-            bton.textContent = '⭐ Quitar de Favoritos';
-        } else {
-            bton.textContent ='❤️ Añadir a Favoritos';
-        }
-    });
-});
-
-//Catálogo dinamico
+//Catálogo dinamico(ejercicio 1)
 const catalogoMuebles = [
     {
         id: 1,
@@ -36,6 +19,24 @@ const catalogoMuebles = [
         imagenURL: "https://placehold.co/150"
     }
 ];
+
+
+//Botón de favorito(ejercicio 2)
+const bton = document.querySelectorAll('.boton-favorito');
+
+bton.forEach(function(bton){
+
+    bton.addEventListener('click', function() {
+
+        bton.classList.toggle('favorito');
+    
+        if(bton.classList.contains('favorito')){
+            bton.textContent = '⭐ Quitar de Favoritos';
+        } else {
+            bton.textContent ='❤️ Añadir a Favoritos';
+        }
+    });
+});
 
 const productContainer = document.getElementById('product-container');
 
