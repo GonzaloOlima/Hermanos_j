@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar usuario</title>
+    <link rel="stylesheet" href="../css/buscador.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>Buscador de usuarios</h1>
+
+        <form id="user-search-form">
+            <label for="username">Nombre de usuario:</label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Ingresa un nombre de usuario"
+                required
+            >
+
+            <button type="submit">Buscar usuario</button>
+        </form>
+
+        <div id="user-result"></div>
+    </main>
+
+    <script src="buscador.js"></script>
+</body>
+
+</html>
