@@ -13,14 +13,14 @@ router.get('/', (req, res, next)=>{
 
 
 // GET /api/productos/:id
-router.get('/:id',(req,res)=>{
+router.get('/:id',(req,res, next)=>{
     const id = Number(req.params.id)
 
-    const producto = producto.find(producto => producto.id === id);
+    const producto = productos.find(p => p.id === id);
 
     if(!producto){
         const error = new Error("Producto no encontrado.");
-        error.estatus = 404;
+        error.status = 404;
 
         return next(error);
     };
