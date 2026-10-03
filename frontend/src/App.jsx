@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ContactForm from './components/ContactForm';
 import ProductList from './components/ProductList';
+import Carrito from './components/Carrito';
 
 function App() {
   // Estado del carrito: array con los productos agregados
@@ -11,6 +12,11 @@ function App() {
   // Agrega un producto al carrito
   const agregarAlCarrito = (producto) => {
     setCarrito([...carrito, producto]);
+  };
+
+  // Elimina del carrito el producto que está en esa posición
+  const eliminarDelCarrito = (indice) => {
+    setCarrito(carrito.filter((_, i) => i !== indice));
   };
 
   return (
@@ -24,6 +30,8 @@ function App() {
         <p>Productos en el carrito: {carrito.length}</p>
 
         <ProductList onAgregar={agregarAlCarrito} />
+
+        <Carrito items={carrito} onEliminar={eliminarDelCarrito} />
 
         <ContactForm />
       </main>
