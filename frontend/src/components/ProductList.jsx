@@ -3,7 +3,9 @@ import ProductCard from './ProductCard';
 
 // ProductList: pide los productos a la API y muestra una ProductCard por cada uno.
 // Maneja tres estados: cargando, error y lista lista para mostrar.
-function ProductList() {
+
+// Recibe onAgregar por props desde App
+function ProductList({ onAgregar }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -35,6 +37,7 @@ function ProductList() {
           nombre={producto.nombre}
           precio={producto.precio}
           imagenURL={producto.imagenURL}
+          onAgregar={() => onAgregar(producto)}
         />
       ))}
     </section>
