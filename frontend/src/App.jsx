@@ -21,13 +21,10 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar cantidad={carrito.length} />
 
       <main>
         <h2>Bienvenidos a nuestra mueblería</h2>
-
-        {/* Contador temporal, después va en el Navbar */}
-        <p>Productos en el carrito: {carrito.length}</p>
 
         <ProductList onAgregar={agregarAlCarrito} />
 
