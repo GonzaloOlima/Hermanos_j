@@ -19,7 +19,7 @@ function ContactForm(){
     };
 
     return (
-        <section>
+        <section className="contacto-form">
             <h2>Contacto</h2>
 
             <form onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ function ContactForm(){
                     onChange={(event) => setMensaje(event.target.value)}
                 />
 
-                <button type="submit">
+                <button type="submit" className="boton">
                     Enviar
                 </button>
             </form>

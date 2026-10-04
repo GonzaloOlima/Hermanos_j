@@ -30,7 +30,7 @@ function ProductList({ onAgregar }) {
   if (productos.length === 0) return <p>No hay productos disponibles.</p>;
 
   return (
-    <section>
+    <section className='galeria-productos'>
       {productos.map((producto) => (
         <ProductCard
           key={producto.id}

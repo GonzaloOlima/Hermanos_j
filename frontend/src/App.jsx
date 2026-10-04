@@ -8,6 +8,8 @@ import Carrito from './components/Carrito';
 function App() {
   // Estado del carrito: array con los productos agregados
   const [carrito, setCarrito] = useState([]);
+  const [vista, setVista] = useState('inicio'); // 'inicio' | 'carrito' | 'contacto'
+
 
   // Agrega un producto al carrito
   const agregarAlCarrito = (producto) => {
@@ -21,16 +23,21 @@ function App() {
 
   return (
     <>
-      <Navbar cantidad={carrito.length} />
+      <Navbar items={carrito} onEliminar={eliminarDelCarrito} vista={vista} setVista={setVista} />
 
       <main>
-        <h2>Bienvenidos a nuestra mueblería</h2>
+        {vista === 'inicio' && (
+          <>
+            <h2>Bienvenidos a nuestra mueblería</h2>
+            <ProductList onAgregar={agregarAlCarrito} />
+          </>
+        )}
 
-        <ProductList onAgregar={agregarAlCarrito} />
+        {vista === 'carrito' && (
+          <Carrito items={carrito} onEliminar={eliminarDelCarrito} />
+        )}
 
-        <Carrito items={carrito} onEliminar={eliminarDelCarrito} />
-
-        <ContactForm />
+        {vista === 'contacto' && <ContactForm />}
       </main>
 
       <Footer />
