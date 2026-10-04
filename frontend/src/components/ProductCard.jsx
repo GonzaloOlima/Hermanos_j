@@ -1,6 +1,6 @@
 // ProductCard: muestra la tarjeta de un producto.
-// Recibe nombre, precio e imagenURL por props.
-function ProductCard({ nombre, precio, imagenURL }) {
+// Recibe nombre, precio, imagenURL y onAgregar (función) por props.
+function ProductCard({ nombre, precio, imagenURL, onAgregar }) {
   return (
     <article>
       <img src={imagenURL} alt={nombre} />
@@ -12,6 +12,9 @@ function ProductCard({ nombre, precio, imagenURL }) {
           ? `$${precio.toLocaleString('es-AR')}`
           : 'Consultar precio'}
       </p>
+
+      {/* Al hacer clic se ejecuta la función que viene por props */}
+      <button onClick={onAgregar}>Agregar al carrito</button>
     </article>
   );
 }
