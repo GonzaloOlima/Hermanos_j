@@ -1,24 +1,33 @@
-const http = require("http");
-const { url } = require("inspector");
+const express = require("express");
+const productosR = require("./routes/productosRoutes");
+const logger = require("./routes/logger");
 
-const server = http.createServer((req, res) => {
-    if (req.url == "/"){
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end('<h1>Bienvenido al servidor de Muebleria Jota</h1>');
-    } else if (req.url == "/productos"){
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end('<h2>Nuestro catalaogo de productos</h2>');
-    } else if (req.url == "/contacto"){
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end('<p>Contáctanos al 555-1234</p>');
-    } else {
-        res.writeHead(404, {"Content-Type": "text/plain"});
-        res.end("Pagina no encontrada");
-    }
+const app = express();
+const PORT = 3000;
+
+//Middlewares de las rutas
+app.use(logger);
+app.use(express.json());
+app.use('/api/productos', productosR);
+
+//Middlewares de rutas inexistentes
+app.use((req, res, next) => {
+    const error = new Error(`Ruta no encontrada: ${req.originalUrl}`);
+    error.status = 404;
+    next(error);
 });
 
-const PORT = 5000;
+//middleware centralizado de errores
+app.use((err, req, res, next) => {
+    const statusCode = err.status || 500;
 
-server.listen(PORT, () => {
+    console.error(err.message, err.stack);
+
+    res.status(statusCode).json({
+    message: err.message || 'Ha ocurrido un error en el servidor.'
+    });
+});
+
+app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
