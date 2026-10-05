@@ -12,7 +12,8 @@ function ProductList({ onAgregar }) {
 
   // Se ejecuta una sola vez, cuando el componente aparece en pantalla
   useEffect(() => {
-    fetch('/api/productos')
+    const API_URL = import.meta.env.VITE_API_URL || '';
+      fetch(`${API_URL}/api/productos`)
       .then((res) => {
         // Si el servidor responde con error (404, 500...), lo tratamos como fallo
         if (!res.ok) throw new Error('No se pudieron cargar los productos');
